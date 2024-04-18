@@ -1,0 +1,35 @@
+UT3_PD1:
+
+a) El costo de memoria puede variar dependiendo cada caso, ya qué necesitamos tener un identificador del alumno(de tipo int),campo para contar asistencias(int).
+
+En el caso de el total de clases impartidas en el curso, mi idea es almacenarlo en el caso de un Array en la primera posición(posición 0) y en el caso de una lista enlazada, almacenarlo solo en el primer nodo, igualmente es de tipo int.
+
+Por ende coste de memoria para un Array de n elementos:
+
+n*(4 bytes + 4 bytes + 4 bytes(solo el primer elemento)) = n * 12 bytes
+
+
+
+A partir del segundo elemento el coste de memoria sería:
+
+n*(4 bytes + 4 bytes) = n* 8 bytes
+
+
+Lista Enlazada:
+
+para la lista enlazada, tenemos que sumarle unos 8 bytes, que es el coste de memoria aproximado de cada puntero(cada .siguiente de la Lista Enlazada):
+
+Por ende coste de memoria para una ListaEnlazada de n elementos: 
+
+
+4bytes(identificador) + 4bytes(asistencia) + 4bytes(solo el primer elemento) + 8bytes(puntero)=  n * 20
+
+A partir del segundo elemento:
+
+4bytes(identificador) + 4bytes(asistencia) + 8bytes(puntero)= n * 16
+
+
+
+b)En relación a el Array, estaría limitado en relación a qué tendríamos que saber la cantidad de alumnos fijos que van a concurrir al curso, podríamos implementar un ArrayList en java, pero el hecho de que se duplique tendría un coste de memoria grande.
+
+Por otro lado, creo que la ListaEnlazada es la mejor estructura, aunque consuma un poco más de memoria que el Array, ya qué no tenemos qué estar limitados a saber la cantidad de alumnos, simplemente podemos agregarlos, a medida que se vayan matriculando al curso(hasta que finalice el plazo)
